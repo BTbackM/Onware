@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package shared.inventory;
+
+option go_package = "github.com/BTbackM/Onware/src/shared/inventory";
+
+message CreateProductRequest {
+  string name = 1;
+  string description = 2;
+  int32 price = 3;
+}
+
+message CreateProductResponse { int32 id = 1; }
+
+service Product {
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
+}
